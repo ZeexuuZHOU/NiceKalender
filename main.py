@@ -10,10 +10,8 @@ ui.markdown('# **This is niceKalender**')
 
 holiday = Holidays()
 
-ui.number(label='available holidays:', value=holiday.avai_holi, format='%.1f')
-# result = ui.label()
+ui.number(label='available holidays:', value=holiday.holidays_achieve["available"], 
+          format='%.1f', on_change=lambda e: holiday.change_avai_holi(e.value))
+ui.label(f'used holidays: {holiday.holidays_achieve["used"]}')
 
-
-
-ui.run()
 ui.run()
